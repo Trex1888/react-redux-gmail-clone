@@ -71,14 +71,15 @@ function Mail() {
           <h2>Subject</h2>
           <LabelImportant className="mail__important" />
           <p>Title</p>
-          <p>10PM</p>
+          <p className="mail__time">10PM</p>
         </div>
 
-        <div className="mail__message">Message goes here</div>
+        <div className="mail__message">
+          <p>Message goes here</p>
+        </div>
       </div>
     </div>
   );
 }
 
 export default Mail;
-//218

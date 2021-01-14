@@ -35,10 +35,6 @@
   position: relative;
 }
 
-.mail__important {
-  color: #ebab02 !important;
-}
-
 .mail__bodyHeader > h2 {
   font-weight: 400;
   margin-right: 20px;
@@ -46,6 +42,18 @@
 
 .mail__bodyHeader > p {
   margin-left: 20px;
+}
+
+.mail__important {
+  color: #ebab02 !important;
+}
+
+.mail__time {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  font-size: 12px;
+  color: gray;
 }
 
 .mail__message > p {

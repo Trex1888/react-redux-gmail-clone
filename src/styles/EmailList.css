@@ -22,3 +22,12 @@
   background-color: #fff;
   z-index: 999;
 }
+
+.emailList::-webkit-scrollbar {
+  display: none;
+}
+
+.emailList::-webkit-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
