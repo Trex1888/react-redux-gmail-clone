@@ -4,8 +4,20 @@ import { Avatar, IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import { Apps, ArrowDropDown, Search } from "@material-ui/icons";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "../features/userSlice";
+import { auth } from "../firebase";
 
 function Header() {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  const signOut = () => {
+    auth.signOut().then(() => {
+      dispatch(logout());
+    });
+  };
+
   return (
     <div className="header">
       <div className="header__left">
@@ -13,7 +25,7 @@ function Header() {
           <MenuIcon />
         </IconButton>
         <img
-          src="http://1000logos.net/wp-content/uploads/2018/04/Gmail-logo-color.jpg"
+          src="https://i.pinimg.com/originals/ae/47/fa/ae47fa9a8fd263aa364018517020552d.png"
           alt="img"
         />
       </div>
@@ -31,7 +43,11 @@ function Header() {
         <IconButton>
           <NotificationsIcon />
         </IconButton>
-        <Avatar />
+        <Avatar
+          className="header__rightAvatar"
+          onClick={signOut}
+          src={user?.photoUrl}
+        />
       </div>
     </div>
   );
